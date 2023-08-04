@@ -1,0 +1,21 @@
+{
+    "name": "ID Injector Openu",
+    "version": "0.1.0",
+    "description": "Automatically fills the ID field in the openu login page",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://*.openu.ac.il/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.openu.ac.il/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "action": {
+      "default_title": "ID Injector Openu",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
